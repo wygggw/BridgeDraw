@@ -1,124 +1,112 @@
-<a href="https://excalidraw.com/" target="_blank" rel="noopener">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" alt="Excalidraw" srcset="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github/excalidraw_github_cover_2_dark.png" />
-    <img alt="Excalidraw" src="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github/excalidraw_github_cover_2.png" />
-  </picture>
-</a>
+# BridgeDraw
 
-<h4 align="center">
-  <a href="https://excalidraw.com">Excalidraw Editor</a> |
-  <a href="https://plus.excalidraw.com/blog">Blog</a> |
-  <a href="https://docs.excalidraw.com">Documentation</a> |
-  <a href="https://plus.excalidraw.com">Excalidraw+</a>
-</h4>
+一款基于 Excalidraw 打造的手绘风无限白板，用来快速记录灵感、绘制草图和整理想法。
 
-<div align="center">
-  <h2>
-    An open source virtual hand-drawn style whiteboard. </br>
-    Collaborative and end-to-end encrypted. </br>
-  <br />
-  </h2>
-</div>
+BridgeDraw 保留了 Excalidraw 成熟的画布交互，并加入绿色品牌视觉、中文界面文案和更精简的产品入口。项目当前聚焦于无限画布、基础图形、文本标注与分享体验。
 
-<br />
-<p align="center">
-  <a href="https://github.com/excalidraw/excalidraw/blob/master/LICENSE">
-    <img alt="Excalidraw is released under the MIT license." src="https://img.shields.io/badge/license-MIT-blue.svg"  /></a>
-  <a href="https://www.npmjs.com/package/@excalidraw/excalidraw">
-    <img alt="npm downloads/month" src="https://img.shields.io/npm/dm/@excalidraw/excalidraw"  /></a>
-  <a href="https://docs.excalidraw.com/docs/introduction/contributing">
-    <img alt="PRs welcome!" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat"  /></a>
-  <a href="https://discord.gg/UexuTaE">
-    <img alt="Chat on Discord" src="https://img.shields.io/discord/723672430744174682?color=738ad6&label=Chat%20on%20Discord&logo=discord&logoColor=ffffff&widget=false"/></a>
-  <a href="https://deepwiki.com/excalidraw/excalidraw">
-    <img alt="Ask DeepWiki" src="https://deepwiki.com/badge.svg" /></a>
-  <a href="https://twitter.com/excalidraw">
-    <img alt="Follow Excalidraw on Twitter" src="https://img.shields.io/twitter/follow/excalidraw.svg?label=follow+@excalidraw&style=social&logo=twitter"/></a>
-</p>
+![BridgeDraw 项目截图](.github/assets/bridgedraw-preview.png)
 
-<div align="center">
-  <figure>
-    <a href="https://excalidraw.com" target="_blank" rel="noopener">
-      <img src="https://excalidraw.nyc3.cdn.digitaloceanspaces.com/github%2Fproduct_showcase.png" alt="Product showcase" />
-    </a>
-    <figcaption>
-      <p align="center">
-        Create beautiful hand-drawn like diagrams, wireframes, or whatever you like.
-      </p>
-    </figcaption>
-  </figure>
-</div>
+## 功能
 
-## Features
+- 无限画布：支持自由平移、缩放和大范围内容组织。
+- 手绘图形：支持矩形、菱形、椭圆、箭头、线条和自由书写。
+- 文本标注：可以在画布上添加文本，组合成说明、标签或灵感贴纸。
+- 编辑能力：支持选择、移动、缩放、复制、撤销、重做和图层调整。
+- 文件导入导出：支持 `.excalidraw` 文件以及 PNG、SVG 等图片格式。
+- 深色模式与响应式界面：适配桌面端和移动端浏览器。
+- 分享入口：保留只读链接与实时协作界面，服务限制见下方“已知限制”。
 
-The Excalidraw editor (npm package) supports:
+## 技术栈
 
-- 💯&nbsp;Free & open-source.
-- 🎨&nbsp;Infinite, canvas-based whiteboard.
-- ✍️&nbsp;Hand-drawn like style.
-- 🌓&nbsp;Dark mode.
-- 🏗️&nbsp;Customizable.
-- 📷&nbsp;Image support.
-- 😀&nbsp;Shape libraries support.
-- 🌐&nbsp;Localization (i18n) support.
-- 🖼️&nbsp;Export to PNG, SVG & clipboard.
-- 💾&nbsp;Open format - export drawings as an `.excalidraw` json file.
-- ⚒️&nbsp;Wide range of tools - rectangle, circle, diamond, arrow, line, free-draw, eraser...
-- ➡️&nbsp;Arrow-binding & labeled arrows.
-- 🔙&nbsp;Undo / Redo.
-- 🔍&nbsp;Zoom and panning support.
+- React 19
+- TypeScript
+- Vite 5
+- Yarn Workspaces
+- Rough.js
+- perfect-freehand
+- Jotai
 
-## Excalidraw.com
+## 本地启动
 
-The app hosted at [excalidraw.com](https://excalidraw.com) is a minimal showcase of what you can build with Excalidraw. Its [source code](https://github.com/excalidraw/excalidraw/tree/master/excalidraw-app) is part of this repository as well, and the app features:
+### 环境要求
 
-- 📡&nbsp;PWA support (works offline).
-- 🤼&nbsp;Real-time collaboration.
-- 🔒&nbsp;End-to-end encryption.
-- 💾&nbsp;Local-first support (autosaves to the browser).
-- 🔗&nbsp;Shareable links (export to a readonly link you can share with others).
+- Node.js 18 或更高版本
+- Yarn 1.22.22
+- Git
 
-We'll be adding these features as drop-in plugins for the npm package in the future.
-
-## Quick start
-
-**Note:** following instructions are for installing the Excalidraw [npm package](https://www.npmjs.com/package/@excalidraw/excalidraw) when integrating Excalidraw into your own app. To run the repository locally for development, please refer to our [Development Guide](https://docs.excalidraw.com/docs/introduction/development).
-
-Use `npm` or `yarn` to install the package.
+### 安装与运行
 
 ```bash
-npm install react react-dom @excalidraw/excalidraw
-# or
-yarn add react react-dom @excalidraw/excalidraw
+git clone https://github.com/wygggw/BridgeDraw.git
+cd BridgeDraw
+yarn install
+yarn start
 ```
 
-Check out our [documentation](https://docs.excalidraw.com/docs/@excalidraw/excalidraw/installation) for more details!
+开发服务器启动后，打开 [http://localhost:3000](http://localhost:3000)。
 
-## Contributing
+Windows PowerShell 如果因执行策略无法运行 `yarn.ps1`，请改用：
 
-- Missing something or found a bug? [Report here](https://github.com/excalidraw/excalidraw/issues).
-- Want to contribute? Check out our [contribution guide](https://docs.excalidraw.com/docs/introduction/contributing) or let us know on [Discord](https://discord.gg/UexuTaE).
-- Want to help with translations? See the [translation guide](https://docs.excalidraw.com/docs/introduction/contributing#translating).
+```powershell
+yarn.cmd install
+yarn.cmd start
+```
 
-## Integrations
+### 常用命令
 
-- [VScode extension](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor)
-- [npm package](https://www.npmjs.com/package/@excalidraw/excalidraw)
+```bash
+yarn start          # 启动开发服务器
+yarn build          # 构建生产版本
+yarn test           # 运行测试
+yarn test:typecheck # TypeScript 类型检查
+yarn fix            # 格式化并修复代码风格
+```
 
-## Who's integrating Excalidraw
+### Docker
 
-[Google Cloud](https://googlecloudcheatsheet.withgoogle.com/architecture) • [Meta](https://meta.com/) • [CodeSandbox](https://codesandbox.io/) • [Obsidian Excalidraw](https://github.com/zsviczian/obsidian-excalidraw-plugin) • [Replit](https://replit.com/) • [Slite](https://slite.com/) • [Notion](https://notion.so/) • [HackerRank](https://www.hackerrank.com/) • and many others
+不希望在本机配置 Node.js 时，可以使用 Docker Compose：
 
-## Sponsors & support
+```bash
+docker compose up --build -d
+```
 
-If you like the project, you can become a sponsor at [Open Collective](https://opencollective.com/excalidraw) or use [Excalidraw+](https://plus.excalidraw.com/).
+## 已知限制
 
-## Thank you for supporting Excalidraw
+- Excalidraw 官方目前没有为自托管版本提供完整的分享和实时协作后端。
+- 本地开发环境的只读分享会访问 Excalidraw 外部 JSON 服务；该服务不可用时，链接创建会失败。
+- 实时协作需要额外部署兼容的协作服务器和文件存储服务。
+- 当前 BridgeDraw 定制版每次打开时从空白画布开始，不恢复上一次保存在浏览器中的画布元素。
 
-[<img src="https://opencollective.com/excalidraw/tiers/sponsors/0/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/0/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/1/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/1/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/2/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/2/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/3/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/3/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/4/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/4/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/5/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/5/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/6/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/6/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/7/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/7/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/8/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/8/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/9/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/9/website) [<img src="https://opencollective.com/excalidraw/tiers/sponsors/10/avatar.svg?avatarHeight=120"/>](https://opencollective.com/excalidraw/tiers/sponsors/10/website)
+无限画布、图形、文本、文件导出等核心编辑功能不依赖 API Key、数据库或 Docker。
 
-<a href="https://opencollective.com/excalidraw#category-CONTRIBUTE" target="_blank"><img src="https://opencollective.com/excalidraw/tiers/backers.svg?avatarHeight=32"/></a>
+## 与 Excalidraw 的关系
 
-Last but not least, we're thankful to these companies for offering their services for free:
+BridgeDraw 基于开源项目 [Excalidraw](https://github.com/excalidraw/excalidraw) 修改，保留其核心编辑器、文件格式和主要交互能力。
 
-[![Vercel](./.github/assets/vercel.svg)](https://vercel.com) [![Sentry](./.github/assets/sentry.svg)](https://sentry.io) [![Crowdin](./.github/assets/crowdin.svg)](https://crowdin.com)
+本仓库不是 Excalidraw 官方产品，也不代表 Excalidraw 团队。BridgeDraw 的品牌、界面调整和后续功能由本仓库维护者独立维护。
+
+仓库保留两个 Git 远程：
+
+- `origin`：BridgeDraw 项目仓库。
+- `upstream`：Excalidraw 官方仓库。
+
+同步上游更新时可以执行：
+
+```bash
+git fetch upstream
+git merge upstream/master
+```
+
+合并前建议新建分支，并检查上游改动是否与 BridgeDraw 的品牌定制冲突。
+
+## 开源许可
+
+本项目沿用 Excalidraw 的 [MIT License](LICENSE)。
+
+原始项目版权声明：
+
+```text
+Copyright (c) 2020 Excalidraw
+```
+
+使用、复制、修改或分发本项目时，请保留原始版权声明和 MIT 许可文本。感谢 Excalidraw 团队及所有贡献者提供的优秀开源基础。
