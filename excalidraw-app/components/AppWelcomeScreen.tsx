@@ -52,7 +52,19 @@ export const AppWelcomeScreen: React.FC<{
       <WelcomeScreen.Hints.ToolbarHint />
       <WelcomeScreen.Hints.HelpHint />
       <WelcomeScreen.Center>
-        <WelcomeScreen.Center.Logo />
+        <WelcomeScreen.Center.Logo>
+          <span
+            style={{
+              color: "#16a34a",
+              fontSize: "2.25rem",
+              fontWeight: 700,
+              letterSpacing: "0.01em",
+              lineHeight: 1.1,
+            }}
+          >
+            BridgeDraw
+          </span>
+        </WelcomeScreen.Center.Logo>
         <WelcomeScreen.Center.Heading>
           {headingContent}
         </WelcomeScreen.Center.Heading>

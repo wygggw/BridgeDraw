@@ -144,7 +144,6 @@ import { ExcalidrawPlusIframeExport } from "./ExcalidrawPlusIframeExport";
 
 import "./index.scss";
 
-import { ExcalidrawPlusPromoBanner } from "./components/ExcalidrawPlusPromoBanner";
 import { AppSidebar } from "./components/AppSidebar";
 
 import type { CollabAPI } from "./collab/Collab";
@@ -238,10 +237,8 @@ const initializeScene = async (opts: {
   > & {
     scrollToContent?: boolean;
   } = {
-    elements: restoreElements(localDataState?.elements, null, {
-      repairBindings: true,
-      deleteInvisibleElements: true,
-    }),
+    // BridgeDraw：每次打开都重新开始（不恢复本地旧图，空白画布 → 自动弹出欢迎界面）
+    elements: [],
     appState: restoreAppState(localDataState?.appState, null),
   };
 
@@ -402,6 +399,15 @@ const ExcalidrawWrapper = () => {
       trackEvent("load", "version", getVersion());
     }, VERSION_TIMEOUT);
   }, []);
+
+  // BridgeDraw：默认新建图形/线条的描边色 = 品牌绿
+  useEffect(() => {
+    if (excalidrawAPI) {
+      excalidrawAPI.updateScene({
+        appState: { currentItemStrokeColor: "#16a34a" },
+      });
+    }
+  }, [excalidrawAPI]);
 
   const [, setShareDialogState] = useAtom(shareDialogStateAtom);
   const [collabAPI] = useAtom(collabAPIAtom);
@@ -959,12 +965,6 @@ const ExcalidrawWrapper = () => {
 
           return (
             <div className="excalidraw-ui-top-right">
-              {excalidrawAPI?.getEditorInterface().formFactor === "desktop" && (
-                <ExcalidrawPlusPromoBanner
-                  isSignedIn={isExcalidrawPlusSignedUser}
-                />
-              )}
-
               {collabError.message && <CollabError collabError={collabError} />}
               <LiveCollaborationTrigger
                 isCollaborating={isCollaborating}
